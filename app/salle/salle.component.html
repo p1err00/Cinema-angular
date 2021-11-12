@@ -1,1 +1,36 @@
-<p>salle works!</p>
+<h1 class="text-center">Reservation</h1>
+<div class="d-flex flex-row justify-content-center mx-auto w-50">
+    <div class="d-flex flex-column w-75 mx-auto">
+    
+    
+        <div class="card mb-4 w-50" *ngFor="let reservation of reservations">
+            <div class="card-header">
+                <h4>{{ reservation.nom_client }}</h4>
+            </div>
+    
+            <div class="card-text">
+                <span>{{ reservation.nom_film }}</span>
+            </div>
+    
+            <div class="card-footer">
+    
+            </div>
+        </div>
+    </div>
+
+    <form class="row m-3">
+        <h3>Clients</h3>
+        <select class="form-control form-select-lg" aria-label="Default select example">
+            <option selected disabled>- Selectionner -</option>
+            <option *ngFor="let client of clients" value="{{ client.nom }}" #client>{{ client.nom }}</option>
+          </select>
+
+          <h3>Film</h3>
+          <select class="form-control form-select-lg" aria-label="Default select example">
+            <option selected disabled>- Selectionner -</option>
+            <option *ngFor="let film of films" value="{{ film.nom }}">{{ film.nom }}</option>
+          </select>
+          <button type="button" class="btn btn-dark btn-sm" (click)="setReservation()">Ajouter</button>
+    </form>
+</div>
+

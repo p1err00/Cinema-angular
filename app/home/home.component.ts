@@ -8,6 +8,7 @@ import { FilmService } from '../shared/film.service';
 import { ReservationService } from '../shared/reservation.service';
 import { SalleService } from '../shared/salle.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 
 
@@ -28,11 +29,15 @@ export class HomeComponent implements OnInit {
 
   displayFilmForm : boolean = false;
 
+
+  //Send data to other component
+
   constructor(
     private httpFilm : FilmService,
     private httpSalle : SalleService,
     private httpReservation : ReservationService,
     private httpClient : ClientService,
+    public route : Router
   ) { }
 
   ngOnInit(): void {
@@ -73,6 +78,7 @@ export class HomeComponent implements OnInit {
   //Delete film
   deleteFilm(film : any){
     console.log(film);
+    this.httpFilm.delete(film.id);
     this.films.splice(this.films.indexOf(film), 1)
   }
 
@@ -88,15 +94,21 @@ export class HomeComponent implements OnInit {
 
   //Submit form
   registerUser(nomFilm : string, dateFilm : string, numeroSalle : number){
-   alert(nomFilm);
-   alert(dateFilm);
-   alert(numeroSalle);
+
+    let film = {
+      id : 0,
+      nom : nomFilm,
+      date : dateFilm,
+      salle : numeroSalle
+    }
+
+   this.httpFilm.create(film);
+   this.films.push(film)
     
   }
   
   //open page film
   openFilm(film : any){
-    this.httpFilm.create(film);
-    this.films.push(film)
+    this.route.navigate(['film/'+film.id])
   }
 }

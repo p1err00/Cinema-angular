@@ -1,106 +1,102 @@
 {
-    "films": [
-        {
-            "id": 0,
-            "nom": "aze",
-            "date": "2021-05-16",
-            "salle": 1
-        },
-        {
-            "id": 1,
-            "nom": "qsd",
-            "date": "2021-05-16",
-            "salle": 3
-        },
-        {
-            "id": 2,
-            "nom": "wxc",
-            "date": "2021-05-16",
-            "salle": 1
-        },
-        {
-            "id": 3,
-            "nom": "aze",
-            "date": "2021-05-16",
-            "salle": 2
-        }
-    ],
-    "clients":[
-        {
-            "id":0,
-            "nom":"aze"
-        },
-        {
-            "id":1,
-            "nom":"qsd"
-        },
-        {
-            "id":2,
-            "nom":"wxc"
-        },
-        {
-            "id":3,
-            "nom":"cvb"
-        },
-        {
-            "id":4,
-            "nom":"ghj"
-        }
-    ],
-    "reservations": [
-        {
-            "id":0,
-            "id_client":0,
-            "nom_client":"aze",
-            "nom_film": "aze"
-        },
-        {
-            "id":1,
-            "id_client":2,
-            "nom_client":"wxc",
-            "nom_film": "aze"
-        },
-        {
-            "id":2,
-            "id_client":0,
-            "nom_client":"aze",
-            "nom_film": "wxc"
-        },
-        {
-            "id":3,
-            "id_client":4,
-            "nom_client":"ghj",
-            "nom_film": "qsd"
-        },
-        {
-            "id":4,
-            "id_client":1,
-            "nom_client":"qsd",
-            "nom_film": "qsd"
-        }
-    ],
-    "salles":[
-        {
-            "id":0,
-            "numero": 1,
-            "films":{
-
-            }
-        },
-        {
-            "id":1,
-            "numero": 2,
-            "films":{
-                
-            }
-        },
-
-        {
-            "id":2,
-            "numero": 3,
-            "films":{
-                
-            }
-        }
-    ]
+  "films": [
+    {
+      "id": 0,
+      "nom": "La grande vadrouille",
+      "date": "2018-05-10",
+      "salle": 1
+    },
+    {
+      "id": 1,
+      "nom": "Vol au dessus d'un nid de coucou",
+      "date": "2012-07-02",
+      "salle": 3
+    },
+    {
+      "id": 2,
+      "nom": "La folie des grandeurs",
+      "date": "2021-05-16",
+      "salle": 1
+    },
+    {
+      "id": 3,
+      "nom": "La liste de shindler",
+      "date": "2004-02-15",
+      "salle": 2
+    },
+    {
+      "id": 4,
+      "nom": "Pulp fiction",
+      "date": "2007-08-22",
+      "salle": 5
+    }
+  ],
+  "clients": [
+    {
+      "id": 0,
+      "nom": "Jean"
+    },
+    {
+      "id": 1,
+      "nom": "Michel"
+    },
+    {
+      "id": 2,
+      "nom": "Martine"
+    },
+    {
+      "id": 3,
+      "nom": "Gerald"
+    },
+    {
+      "id": 4,
+      "nom": "Emmannuel"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 0,
+      "id_client": 0,
+      "nom_client": "Jean",
+      "nom_film": "La folie des grandeurs"
+    },
+    {
+      "id": 1,
+      "id_client": 2,
+      "nom_client": "Martine",
+      "nom_film": "Pulp fiction"
+    },
+    {
+      "id": 2,
+      "id_client": 0,
+      "nom_client": "Jean",
+      "nom_film": "Vol au dessus d'un nid de coucou"
+    },
+    {
+      "id": 3,
+      "id_client": 4,
+      "nom_client": "Emmannuel",
+      "nom_film": "Pulp fiction"
+    },
+    {
+      "id": 4,
+      "id_client": 1,
+      "nom_client": "Michel",
+      "nom_film": "La folie des grandeurs"
+    }
+  ],
+  "salles": [
+    {
+      "id": 0,
+      "numero": 1
+    },
+    {
+      "id": 1,
+      "numero": 2
+    },
+    {
+      "id": 2,
+      "numero": 3
+    }
+  ]
 }

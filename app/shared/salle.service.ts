@@ -22,7 +22,17 @@ export class SalleService {
   }
 
   create(data : any){
-    return this.http.post(`${environment.apiUrl}/salles`, data);
+    return this.http.post(`${environment.apiUrl}/salles`, data).subscribe(
+      (val) => {
+          console.log("POST call successful value returned in body", 
+                      val);
+      },
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+      });
   }
 
   update(id : number, data : any){

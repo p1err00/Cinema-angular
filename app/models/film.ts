@@ -1,6 +1,6 @@
 export interface Film{
     id : number,
     nom: string,
-    date: Date, 
+    date: string, 
     salle: number
 }

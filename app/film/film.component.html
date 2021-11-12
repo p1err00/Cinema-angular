@@ -1,1 +1,15 @@
-<p>film works!</p>
+<div class="d-flex flex-row">
+    <div class="d-flex flex-column w-25 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ film.nom }}</h2>
+            </div>
+            <div class="card-text">
+                Date de visionnage : {{ film.date }}
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-dark" (click)="reservation()">Ajouter une reservation</button>
+            </div>
+        </div>
+    </div>
+</div>

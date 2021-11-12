@@ -1,54 +1,52 @@
-<div class="d-flex flex-column justify-content-around w-50 mx-auto">
+<div class="d-flex flex-row">
+    <div class="d-flex flex-column justify-content-around w-75 mx-auto">
 
-
-    <div class="d-flex flex-row justify-content-around">
-        <button type="button" class="btn btn-dark w-25">Ajouter une salle</button>
-    </div>
-    <div class="w-75 mx-auto mt-4" *ngFor="let salle of salles">
-        <h1>Salles {{ salle.numero }}</h1>
-
-        <div class="d-flex flex-row justify-content-around mx-auto mb-4">
-
-            <div class="card" *ngFor="let film of films" #film>
-                <div class="card-header" role="button" (click)="openFilm(film)">
-                    <h2>{{ film.nom }}</h2>
+        <div class="w-100 mx-auto mt-4" *ngFor="let salle of salles">
+            <h1>Salles {{ salle.numero }}</h1>
+    
+            <div class="d-flex flex-row justify-content-around mx-auto mb-4">
+    
+                <div class="card" *ngFor="let film of films" #film>
+                    <div class="card-header" role="button" (click)="openFilm(film)" >
+                        <h2>{{ film.nom }}</h2>
+                    </div>
+    
+                    <div class="card-text">
+                        <span>Salle :</span>
+                        {{ film.salle }}
+                    </div>
+    
+                    <div class="card-footer">
+                        <h4>Date visionnage :</h4>
+                        {{ film.date }}
+                    </div>
+                    <button type="button" class="btn btn-danger" (click)="deleteFilm(film)">Supprimer</button>
                 </div>
-
-                <div class="card-text">
-                    <span>Salle :</span>
-                    {{ film.salle }}
-                </div>
-
-                <div class="card-footer">
-                    <h4>Date visionnage :</h4>
-                    {{ film.date }}
-                </div>
-                <button type="button" class="btn btn-danger" (click)="deleteFilm(film)">Supprimer</button>
             </div>
+            <button type="button" class="btn btn-dark w-25" (click)="displayModalAddFilm()">Ajouter un
+            film</button>
         </div>
-        <button type="button" class="btn btn-dark w-25" (click)="displayModalAddFilm()">Ajouter un
-        film</button>
     </div>
-</div>
-
-<div class="d-flex flex-column w-50 m-4 mx-auto" *ngIf="displayFilmForm">
-    <form class="form-signin border p-4 w-100" >
-        <div class="d-flex flex-row justify-content-between">
-            <h2>Ajouter un film</h2>
-            <button type="button" class="btn btn-dark" (click)="closeAddFilm()">X</button>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" #nomFilm/>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput2">Date de visualisation</label>
-            <input type="date" class="form-control" id="exampleFormControlInput2" #dateFilm/>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput3">Numero de salle</label>
-            <input type="number" class="form-control" id="exampleFormControlInput3" #numeroSalle/>
-        </div>
-        <button type="button" class="btn btn-dark" (click)="registerUser(nomFilm.value, dateFilm.value, +numeroSalle.value)">Ajouter</button>
-    </form>
+    
+    <div class="d-flex flex-column w-50 m-4 mx-auto" *ngIf="displayFilmForm">
+        <form class="form-signin border p-4 w-100" >
+            <div class="d-flex flex-row justify-content-between">
+                <h2>Ajouter un film</h2>
+                <button type="button" class="btn btn-dark" (click)="closeAddFilm()">X</button>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" #nomFilm/>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2">Date de visualisation</label>
+                <input type="date" class="form-control" id="exampleFormControlInput2" #dateFilm/>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput3">Numero de salle</label>
+                <input type="number" class="form-control" id="exampleFormControlInput3" #numeroSalle/>
+            </div>
+            <button type="button" class="btn btn-dark" (click)="registerUser(nomFilm.value, dateFilm.value, +numeroSalle.value)">Ajouter</button>
+        </form>
+    </div>
 </div>
